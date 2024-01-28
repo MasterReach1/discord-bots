@@ -12,9 +12,6 @@ LIST_OF_BAD_WORDS = [
     "jerk",
     "nincompoop",
     "silly billy",
-    "gg",
-    "yipppeeee",
-    "nice shot",
     "fortnite",
     "suck",
     "sucks"
