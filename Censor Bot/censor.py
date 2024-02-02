@@ -1,8 +1,12 @@
 import discord
+import os
+from dotenv import load_dotenv
 from badwords import LIST_OF_BAD_WORDS
 
 def run_discord_bot():
-    TOKEN = "insert token here"
+    load_dotenv()
+    TOKEN = os.getenv('discord_token')
+    print(TOKEN)
     intents = discord.Intents.default()
     intents.message_content = True
     client = discord.Client(intents=intents)
