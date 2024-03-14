@@ -11,6 +11,7 @@ def run_bot():
     intents.message_content = True
     client = discord.Client(intents=intents)
 
+    queues = {}
     voice_clients = {}
     yt_dl_options = {"format": "bestaudio/best"}
     ytdl = yt_dlp.YoutubeDL(yt_dl_options)
@@ -59,6 +60,12 @@ def run_bot():
             try:
                 voice_clients[message.guild.id].stop()
                 await voice_clients[message.guild.id].disconnect()
+            except Exception as e:
+                print(e)
+
+        if message.content.startswith("?queue"):
+            try:
+
             except Exception as e:
                 print(e)
 
