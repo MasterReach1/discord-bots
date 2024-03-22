@@ -63,10 +63,4 @@ def run_bot():
             except Exception as e:
                 print(e)
 
-        if message.content.startswith("?queue"):
-            try:
-
-            except Exception as e:
-                print(e)
-
     client.run(TOKEN)
