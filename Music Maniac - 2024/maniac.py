@@ -42,7 +42,7 @@ def run_bot():
 
         try:
 
-            if "www.youtube.com" not in link:
+            if youtube_base_url not in link:
                 query_string = urllib.parse.urlencode({
                     'search_query': link
                 })
@@ -54,7 +54,6 @@ def run_bot():
                 search_results = re.findall(r'/watch\?v=(.{11})', content.read().decode())
 
                 link = youtube_watch_url + search_results[0]
-                # await ctx.send('https://www.youtube.com/watch?v=' + search_results[0])
 
             loop = asyncio.get_event_loop()
             data = await loop.run_in_executor(None, lambda: ytdl.extract_info(link, download=False))
